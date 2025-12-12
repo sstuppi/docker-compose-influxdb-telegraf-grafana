@@ -18,7 +18,8 @@ cd docker-compose-influxdb-telegraf-grafana
 ### Deploy the Stack
 
 ```bash
-docker-compose up -d
+docker network create monitoring
+docker compose up -d
 ```
 
 ![Deployment Output](https://github.com/user-attachments/assets/0a9f8a91-66f6-4aec-a71c-16f5d6051b59)
@@ -33,7 +34,8 @@ docker-compose up -d
 
 2. **Start the Services**:
    ```bash
-   docker-compose up -d
+   docker network create monitoring
+   docker compose up -d
    ```
 
 3. **Verify the Services**:
@@ -52,7 +54,7 @@ docker-compose up -d
 - Telegraf configuration files are located in the `telegraf` directory.
 - After modifying the configuration files, restart the Telegraf container:
   ```bash
-  docker-compose restart telegraf
+  docker compose restart telegraf
   ```
 
 ### Viewing Metrics in Grafana
